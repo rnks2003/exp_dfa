@@ -366,7 +366,7 @@ with st.sidebar:
             current_dfa = st.session_state.dfas[st.session_state.current_dfa]
 
             # Add States
-            with st.popover("Add States", use_container_width=True):
+            with st.expander("Add States", width='stretch'):
                 st.subheader("Add State")
                 new_state = st.text_input("State Name", key="new_state")
                 is_start = st.checkbox("Start State", key="is_start_state")
@@ -388,7 +388,7 @@ with st.sidebar:
                         st.error("Please enter a state name")
 
             # Add Alphabet
-            with st.popover("Add Alphabet", use_container_width=True):
+            with st.expander("Add Alphabet", width='stretch'):
                 st.subheader("Add Symbol")
                 new_symbol = st.text_input("Symbol", key="new_symbol")
 
@@ -408,7 +408,7 @@ with st.sidebar:
                         st.error("Please enter a symbol")
 
             # Add Transitions
-            with st.popover("Add Transitions", use_container_width=True):
+            with st.expander("Add Transitions", width='stretch'):
                 st.subheader("Add Transition")
                 if current_dfa.states and current_dfa.alphabet:
                     from_state = st.selectbox("From State", list(current_dfa.states), key="from_state")
@@ -452,7 +452,7 @@ with st.sidebar:
 
     # DFA Management
     st.header("DFA Management")
-    if st.session_state.current_dfa and st.button("Delete Current DFA", type="secondary"):
+    if st.session_state.current_dfa and st.button("Delete Current DFA", type="secondary", use_container_width=True):
         del st.session_state.dfas[st.session_state.current_dfa]
         st.session_state.current_dfa = None if not st.session_state.dfas else list(st.session_state.dfas.keys())[0]
         st.rerun()
