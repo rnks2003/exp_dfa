@@ -1,0 +1,22 @@
+[server]
+runOnSave = true
+headless = true
+
+[[theme.fontFaces]]
+family = "Aubrey"
+url = "https://fonts.gstatic.com/s/aubrey/v28/q5uGsou7NPBw-p7fvQltKRZUgQ.woff2"
+style = "normal"
+weight = "400"
+
+[[theme.fontFaces]]
+family = "JetBrains Mono"
+url = "https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD7OwGtT0rU.woff2"
+style = "normal"
+weight = "300"
+
+[theme]
+base = "dark"
+font = "Aubrey"
+
+[ui]
+hideTopBar = true
